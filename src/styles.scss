@@ -1,0 +1,160 @@
+@use "node_modules/@angular/material/index" as mat;
+@use 'color-palette';
+@use 'common';
+@use "sass:map";
+
+@tailwind base;
+@tailwind components;
+
+.custom-container {
+  @apply mx-9 mt-10 min-h-[calc(100vh_-_160px)];
+}
+@screen sm {
+  .custom-container {
+    @apply mx-[88px] mt-[60px];
+  }
+}
+@screen lg {
+  .custom-container{
+    @apply mx-[140px] mt-20 max-w-[1640px];
+  }
+}
+@tailwind utilities;
+
+// Define as cores do tema
+$crudAngular-primary: mat.define-palette(color-palette.$custom-primary-color);
+$crudAngular-accent: mat.define-palette(color-palette.$custom-accent-color);
+$crudAngular-warn: mat.define-palette(color-palette.$custom-warn-color);
+
+// Define o tema com base nas cores padrão e na tipografia
+$crudAngular-theme: mat.define-light-theme((color: (primary: $crudAngular-primary,
+  accent: $crudAngular-accent,
+  warn: $crudAngular-warn,
+),
+  typography: common.$crudAngular-typography,
+));
+
+// Aplica a cor extra - Success
+$crudAngular-theme: common.apply-extra-colors($crudAngular-theme);
+
+//Generate theme
+@include common.create-theme($crudAngular-theme);
+
+
+// Declarações CSS Global
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.mat-caption {
+  text-transform: uppercase;
+}
+
+.color-primary {
+  color: mat.get-color-from-palette($crudAngular-primary);
+}
+
+.background-color-primary {
+  background-color: mat.get-color-from-palette($crudAngular-primary);
+  background: mat.get-color-from-palette($crudAngular-primary);
+}
+
+.color-accent {
+  color: mat.get-color-from-palette($crudAngular-accent);
+}
+
+.background-color-accent {
+  background-color: mat.get-color-from-palette($crudAngular-accent);
+}
+
+.color-warn {
+  color: mat.get-color-from-palette($crudAngular-warn);
+}
+
+.color-success {
+  color: mat.get-color-from-palette(mat.define-palette(color-palette.$custom-success-color));
+}
+
+.background-color-white {
+  background-color: mat.get-color-from-palette(mat.define-palette(color-palette.$custom-white-color));
+}
+
+.color-neutral {
+  color: #262626
+}
+
+.color-grey {
+  background-color: #F0F0F0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #CCCCCC;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3919cb;
+}
+
+
+//Estilos do choice
+
+.mat-mdc-chip.mat-mdc-standard-chip {
+  background-color: transparent;
+  color: mat.get-color-from-palette($crudAngular-primary);
+  border: 1px solid mat.get-color-from-palette($crudAngular-primary);
+}
+
+.disabled {
+  border: 1px solid mat.get-color-from-palette($crudAngular-primary);
+  color: black;
+}
+
+.mat-mdc-chip.mat-mdc-standard-chip:active {
+  border: 1px solid mat.get-color-from-palette($crudAngular-primary);
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version.*/
+.mat-mdc-chip.mat-mdc-standard-chip.mat-chip-selected.mat-primary {
+  color: mat.get-color-from-palette($crudAngular-primary);
+  background-color: mat.get-color-from-palette($crudAngular-primary, 0.1);
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+//referente ao bug do input-outline
+.mdc-notched-outline__notch { border-right: none; }
+
+.mat-headline-6, .mat-typography .mat-headline-6,
+.mat-headline-5, .mat-typography .mat-headline-5,
+.mat-headline-4, .mat-typography .mat-headline-4,
+.mat-headline-3, .mat-typography .mat-headline-3,
+.mat-headline-2, .mat-typography .mat-headline-2,
+.mat-headline-1, .mat-typography .mat-headline-1,
+.mat-subtitle-1, .mat-typography .mat-subtitle-1,
+.mat-body-1 .mat-typography .mat-body-1,
+.mat-body-2 .mat-typography .mat-body-2,
+.mat-caption .mat-typography .mat-caption,
+.mat-button .mat-typography .mat-button
+{
+  margin: 0 !important;
+}

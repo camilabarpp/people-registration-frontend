@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "name": "Fernando Lima",
+    "birthdate": "02/01/2000",
+    "addresses": [
+      {
+        "id": 1,
+        "cep": "93010-005",
+        "number": "670",
+        "logradouro": "Rua Independência",
+        "bairro": "Centro",
+        "localidade": "São Leopoldo",
+        "uf": "RS",
+        "mainAddress": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Camila Barpp",
+    "birthdate": "30/10/1985",
+    "addresses": [
+      {
+        "id": 2,
+        "cep": "93010-003",
+        "number": "670",
+        "logradouro": "Rua 25 de março",
+        "bairro": "Centro",
+        "localidade": "São Leopoldo",
+        "uf": "RS",
+        "mainAddress": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "João da Silva",
+    "birthdate": "02/01/2000",
+    "addresses": [
+      {
+        "id": 3,
+        "cep": "94020-010",
+        "number": "670",
+        "logradouro": "Rua Floriano Peixoto",
+        "bairro": "Centro",
+        "localidade": "Gravatá",
+        "uf": "RS",
+        "mainAddress": true
+      }
+    ]
+  }
+]
