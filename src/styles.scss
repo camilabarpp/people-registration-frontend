@@ -9,13 +9,14 @@
 .custom-container {
   @apply mx-9 mt-10 min-h-[calc(100vh_-_160px)];
 }
+
 @screen sm {
   .custom-container {
     @apply mx-[88px] mt-[60px];
   }
 }
 @screen lg {
-  .custom-container{
+  .custom-container {
     @apply mx-[140px] mt-20 max-w-[1640px];
   }
 }
@@ -138,11 +139,19 @@ body {
 }
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 //referente ao bug do input-outline
-.mdc-notched-outline__notch { border-right: none; }
+.mdc-notched-outline__notch {
+  border-right: none;
+}
 
 .mat-headline-6, .mat-typography .mat-headline-6,
 .mat-headline-5, .mat-typography .mat-headline-5,
@@ -154,7 +163,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-body-1 .mat-typography .mat-body-1,
 .mat-body-2 .mat-typography .mat-body-2,
 .mat-caption .mat-typography .mat-caption,
-.mat-button .mat-typography .mat-button
-{
+.mat-button .mat-typography .mat-button,
+.mat-h4, .mat-body-1, .mat-typography .mat-h4,
+.mat-typography .mat-body-1, .mat-typography h4 {
   margin: 0 !important;
 }

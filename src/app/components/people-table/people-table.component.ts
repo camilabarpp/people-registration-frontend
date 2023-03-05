@@ -28,21 +28,20 @@ export class PeopleTableComponent {
   }
 
   refreshPeople() {
-    this._peopleService.fetchPeople().subscribe(
-      (people) => {
-        console.log(people)
-      });
+    this.people$ = this._peopleService.fetchPeople()
+      .pipe(
+        catchError(error => {
+          this.onError('Erro ao carregar cursos.');
+          return of([])
+        })
+      );
   }
 
   // refreshPeople() {
-  //   this._peopleService.fetchPeople().pipe(
-  //
-  //     catchError(error => {
-  //         this.onError('Erro ao carregar pessoas.');
-  //         return of([])
-  //       }
-  //     )
-  //   );
+  //   this._peopleService.fetchPeople().subscribe(
+  //     (people) => {
+  //       console.log(people)
+  //     });
   // }
 
   onError(errorMsg: string) {
