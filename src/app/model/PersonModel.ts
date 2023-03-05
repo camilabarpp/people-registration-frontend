@@ -1,15 +1,17 @@
 export interface PersonModel {
   _id: string;
   name: string;
-  birthdate: string;
+  birthDate: string;
   addresses: AddressModel[];
 }
 
 export interface AddressModel {
-  street: string;
-  city: string;
-  state: string;
-  zip: string;
-  neighborhood: string;
-  number: string;
+  bairro: string,
+  cep: string,
+  id: number,
+  localidade: string,
+  logradouro: string,
+  mainAddress: boolean,
+  number: string,
+  uf: string
 }

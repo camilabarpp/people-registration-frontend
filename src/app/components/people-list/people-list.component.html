@@ -3,30 +3,36 @@
     <mat-header-cell *matHeaderCellDef
                      [ngClass]="{
                      'mat-headline-1': isDesktopScreen,
-                     'mat-body-1' : isTabletScreen}"> Nome
+                     'mat-subtitle-1' : isTabletScreen,
+                     'mat-body-2' : isMobileScreen}"
+                     class="font-bold"> Nome
     </mat-header-cell>
     <mat-cell *matCellDef="let person"
               [ngClass]="{
               'mat-subtitle-1': isDesktopScreen,
-              'mat-body-1' : isTabletScreen }"> {{person.name}} </mat-cell>
+              'mat-body-2' : isTabletScreen,
+              'mat-body-1' : isMobileScreen}"> {{person.name}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="birthDate">
     <mat-header-cell *matHeaderCellDef
                      [ngClass]="{
                      'mat-headline-1': isDesktopScreen,
-                     'mat-body-1' : isTabletScreen}"> Data de Nascimento
+                     'mat-subtitle-1' : isTabletScreen,
+                     'mat-body-2' : isMobileScreen}"
+                     class="font-bold"> Data de Nascimento
     </mat-header-cell>
     <mat-cell *matCellDef="let person"
               [ngClass]="{
               'mat-subtitle-1': isDesktopScreen,
-              'mat-body-1' : isTabletScreen }"> {{person.birthdate}} </mat-cell>
+              'mat-body-2' : isTabletScreen,
+              'mat-body-1' : isMobileScreen}"> {{person.birthdate}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="addresses">
     <mat-header-cell *matHeaderCellDef class="mat-headline-1">Endereço</mat-header-cell>
     <mat-cell *matCellDef="let person"
-              class="mat-subtitle-1"> {{ person.addresses[0].street + ', ' + person.addresses[0].number }} </mat-cell>
+              class="mat-subtitle-1"> {{ person.addresses[0].logradouro + ', ' + person.addresses[0].number }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="actions">

@@ -16,6 +16,7 @@ export class PeopleListComponent implements OnChanges {
   displayedColumns = ['name', 'birthDate', 'addresses', 'actions'];
   isDesktopScreen: boolean = false;
   isTabletScreen: boolean = false;
+  isMobileScreen: boolean = false;
 
   ngOnChanges(): void {
     this.detectScreenSize();
@@ -44,16 +45,19 @@ export class PeopleListComponent implements OnChanges {
   detectScreenSize() {
     if (window.innerWidth <= 1205 && window.innerWidth >= 640) {
       this.displayedColumns = ['name', 'birthDate', 'actions'];
-      this.isDesktopScreen = true;
-      this.isTabletScreen = false;
+      this.isDesktopScreen = false;
+      this.isTabletScreen = true;
+      this.isMobileScreen = false;
     } else if (window.innerWidth <= 640) {
       this.displayedColumns = ['name', 'actions'];
       this.isDesktopScreen = false;
-      this.isTabletScreen = true;
+      this.isTabletScreen = false;
+      this.isMobileScreen = true;
     } else {
       this.displayedColumns = ['name', 'birthDate', 'addresses', 'actions'];
       this.isDesktopScreen = true;
       this.isTabletScreen = false;
+      this.isMobileScreen = false;
     }
   }
 

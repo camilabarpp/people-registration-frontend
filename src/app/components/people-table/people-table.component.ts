@@ -25,6 +25,7 @@ export class PeopleTableComponent {
     private snackBar: MatSnackBar
   ) {
     this.refreshPeople();
+    this.people$?.subscribe(a => console.log(a))
   }
 
   refreshPeople() {
